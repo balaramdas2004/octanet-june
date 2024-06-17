@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('task-2todolist\ image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 2.1), rgba(0, 0, 0, 0)); /* Translucent black gradient */
+    z-index: 1; /* Ensure it is on top of the background image but below the content */
+}
+
+.todo-list {
+    border-radius: 50%; /* Make the container circular */
+    padding: 20px;
+    width: 300px; /* Set width */
+    height: 200px; /* Set height to match width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative to ensure it sits on top of the gradient */
+    z-index: 2; /* Ensure it is above the gradient */
+    color: #ffffff72;
+}
+
+h1 {
+    color: #b6afc5;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 2.5em;
+    position: relative; /* Ensure it is positioned over the gradient */
+    z-index: 3; /* Higher z-index to bring it above the gradient */
+}
+
+
+h2 {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #d6c3be; 
+}
+
+#task-input-container {
+    display:flex;
+    align-items:center;
+    width: 100%;
+}
+
+#new-task {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid lightgray;
+    border-radius: 5px 0 0 5px;
+    font-size: 1.4em;
+    color: #333;
+}
+
+#add-task {
+    padding: 10px 15px;
+    border: none;
+    background-color: #17580ff3; 
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+#tasks {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#tasks li {
+    background-color: #e9ecef; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333; /* Dark grey */
+}
+
+#tasks li button {
+    background-color: #dc3545; /* Bootstrap danger red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Custom checkbox */
+input[type="checkbox"] {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #1b4512; /* Bootstrap primary blue */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #1b4512; /* Bootstrap primary blue */
+}
+
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
